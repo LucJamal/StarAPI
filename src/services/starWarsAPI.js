@@ -19,6 +19,6 @@ export async function fetchCharactersById(id) {
 export async function fetchCharactersByName(name) {
   const res = await fetch(`${BASE_URL}/characters/name/${encodeURIComponent(name)}`)
   if (res.status === 404) return []
-  // Este endpoint retorna um array direto: [{...}], sem wrapper "data"
+ 
   return parseResponse(res, 'Não foi possível buscar o personagem.')
 }
