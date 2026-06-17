@@ -35,7 +35,7 @@ function StarWarsDetailPage() {
     <section className="characters-detail characters-detail--empty">
       <h2> Personagem  não encontrado</h2>
       <p>Não existe um Personagem com o id &quot;{id}&quot;.</p>
-      <Link to="/characters" className="characters-detail__back">
+      <Link to="/" className="characters-detail__back">
         Voltar ao catálogo
       </Link>
     </section>
@@ -43,7 +43,7 @@ function StarWarsDetailPage() {
 
   return (
     <section className="characters-detail" aria-labelledby="detalhe-titulo">
-      <Link to="/characters" className="characters-detail__back">
+      <Link to="/" className="characters-detail__back">
         ← Voltar ao catálogo
       </Link>
 
