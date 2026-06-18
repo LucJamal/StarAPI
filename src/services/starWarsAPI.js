@@ -1,3 +1,5 @@
+import { mapCharacterFromApi } from '../utils/mapCharacter'
+
 const BASE_URL = 'https://starwars-databank-server.onrender.com/api/v1'
 
 async function parseResponse(res, msg) {
@@ -5,20 +7,17 @@ async function parseResponse(res, msg) {
   return res.json()
 }
 
-export async function fetchCharactersList() {
-  const res = await fetch(`${BASE_URL}/characters`)
-  return parseResponse(res, 'Não foi possível carregar a lista de personagens.')
+export async function fetchCharactersList(limit = 1000) {
+  const res = await fetch(`${BASE_URL}/characters?page=1&limit=${limit}`)
+  const json = await parseResponse(
+    res, 'Não foi possível carregar a lista de personagens.'
+  )
+  return json.data.map(mapCharacterFromApi)
 }
 
 export async function fetchCharactersById(id) {
   const res = await fetch(`${BASE_URL}/characters/${id}`)
   if (res.status === 404) return null
-  return parseResponse(res, 'Não foi possível carregar o personagem.')
-}
-
-export async function fetchCharactersByName(name) {
-  const res = await fetch(`${BASE_URL}/characters/name/${encodeURIComponent(name)}`)
-  if (res.status === 404) return []
- 
-  return parseResponse(res, 'Não foi possível buscar o personagem.')
+  const data = await parseResponse(res, 'Não foi possível carregar o personagem.')
+  return mapCharacterFromApi(data)
 }

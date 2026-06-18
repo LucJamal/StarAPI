@@ -49,7 +49,7 @@ function StarWarsDetailPage() {
 
       <article className="characters-detail__card">
         <div className="characters-detail__media">
-          <img src={characters.image} alt={characters.name} width={160} height={160} />
+          <img src={characters.imageUrl} alt={characters.name} width={160} height={160} />
         </div>
         <div className="characters-detail__body">
           <h2 id="detalhe-titulo">{characters.name}</h2>

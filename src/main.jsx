@@ -6,6 +6,7 @@ import App from './App.jsx'
 import HomePage from './pages/homePage'
 import AboutPage from './pages/AboutPage'
 import StarWarsDetailPage from './pages/starWarsDetailpage'
+import NotFoundPage from './pages/NotFoundPage'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'characters/:id', element: <StarWarsDetailPage /> },
+      { path: '*', element: <NotFoundPage /> },
     ],
   },
 ])

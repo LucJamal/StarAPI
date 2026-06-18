@@ -1,14 +1,20 @@
 # StarAPI
 
 - Nome do Dev: Lucas Joaquim de Oliveira Soares
+- API utilizada: **Star Wars Databank API**
+- Documentação da API: https://starwars-databank.vercel.app/
 
 ## Funcionalidades:
 
-- Foi implementado a requisição de personagens na API , na qual na tela de início traz alguns personagen por ordem alfabética.
+- Listagem de personagens de Star Wars consumidos diretamente da API na tela inicial.
 
-- Também na primeira tem a opção de pesquisar o personagem pelo nome. (O nome tem que estar no padrão : Luke Skywalker. Limitações da própia API).
+- Campo de busca que filtra a lista carregada pelo nome em tempo real, localmente, sem nova requisição à API.
 
-- Também se tem um sobre trazendo Prólogo do livro de Star Wars.
+- Página de detalhe de cada personagem (imagem e descrição) via rota dinâmica.
+
+- Página "Sobre" trazendo o prólogo do livro de Star Wars.
+
+- Página 404 para rotas inexistentes, indicador de carregamento e mensagem de erro amigável.
 
 ## Instruções e link do GitHub:
 
